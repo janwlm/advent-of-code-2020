@@ -15,12 +15,11 @@ def possibleSolutions(sortedInput, i):
 
     result = 0
     for j in range(i + 1, min(i + 4, len(sortedInput))):
-        if(sortedInput[j] - sortedInput[i] <= 3 and cache[j] == 0):
-            cache[j] = possibleSolutions(sortedInput, j)
+        if(sortedInput[j] - sortedInput[i] <= 3):
+            if(cache[j] == 0):
+                cache[j] = possibleSolutions(sortedInput, j)
             result += cache[j]
-        elif(sortedInput[j] - sortedInput[i] <= 3 and cache[j] != 0):
-            result += cache[j]
-
+            
     return result
 
 sortedInput = readInput()
