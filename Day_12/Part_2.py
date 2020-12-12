@@ -1,5 +1,3 @@
-import math
-
 def parse_input():
     inputFile = open("input.txt").readlines()
     tempArr = []
